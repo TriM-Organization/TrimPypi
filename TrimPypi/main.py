@@ -1,5 +1,5 @@
 def set_bat():
-    with open("upload.bat", "w") as w:
+    with open("upload.bat", "w", encoding="utf-8") as w:
         w.write("""python setup.py sdist bdist_wheel
 python -m twine upload dist/*
 python clean_update.py
@@ -7,7 +7,7 @@ python clean_update.py
 
 
 def set_clean_update():
-    with open("clean_update.py", "w") as w:
+    with open("clean_update.py", "w", encoding="utf-8") as w:
         w.write("""import shutil
 import os
 from rich.console import Console
@@ -34,13 +34,13 @@ if __name__ == "__main__":
 
 
 def set_setup():
-    with open("setup.py", "w") as w:
+    with open("setup.py", "w", encoding="utf-8") as w:
         w.write("""# -*- coding: utf-8 -*-
 import setuptools
 import Musicreater
 
 with open("requirements.txt", "r", encoding="utf-8") as fh:
-    dependences = fh.read().strip().split("\n")
+    dependences = fh.read().strip().split("\\n")
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read().replace(
