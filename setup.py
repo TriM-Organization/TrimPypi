@@ -1,27 +1,22 @@
 # -*- coding: utf-8 -*-
 import setuptools
-import Musicreater
-
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    dependences = fh.read().strip().split("
-")
+import TrimPypi
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read().replace(
-        "./docs/", "https://github.com/TriM-Organization/Musicreater/blob/master/docs/"
+        "./docs/", "https://github.com/TriM-Organization/TrimPypi/blob/master/README.md"
     )
 
 setuptools.setup(
-    name="Musicreater",
-    version=Musicreater.__version__,
-    author="Eilles Wan, bgArray",
+    name="TrimPypi",
+    version=TrimPypi.__version__,
+    author="bgArray",
     author_email="TriM-Organization@hotmail.com",
-    description="一款免费开源的 《我的世界》 mid音乐转换库。
-"
-    "A free open-source python library used to convert midi into Minecraft.",
+    description="Pypi涓婁紶宸ュ叿鏈湴閰嶅鏂囦欢鍒濆鍖栫鐞嗐�俓n"
+    "Local supporting file initialization management for Pypi upload tool.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/TriM-Organization/Musicreater",
+    url="https://github.com/TriM-Organization/TrimPypi",
     packages=setuptools.find_packages(),
     classifiers=[
         "Intended Audience :: Developers",
@@ -37,6 +32,4 @@ setuptools.setup(
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
     ],
-    # 需要安装的依赖
-    install_requires=dependences,
 )
